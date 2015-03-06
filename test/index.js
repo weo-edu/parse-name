@@ -40,4 +40,8 @@ describe('parse-name', function() {
     assert.equal(compose(components), 'John Smith');
     assert.equal(compose(components, {respectful: true}), 'Mr. Smith');
   });
+
+  it('should fall back to first/last if there is no title, even if respectful is true', function() {
+    assert.equal(compose({first: 'John', last: 'Smith'}, {respectful: true}), 'John Smith');
+  });
 });

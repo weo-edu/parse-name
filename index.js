@@ -26,7 +26,7 @@ exports.parse = function(name, titles) {
 exports.compose = function(components, opts) {
   opts = opts || {};
 
-  var first = opts.respectful ? components.title : components.first;
+  var first = opts.respectful ? (components.title || components.first) : components.first;
   return first + ' ' + components.last;
 };
 
