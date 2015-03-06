@@ -1,0 +1,28 @@
+{
+  "name": "parse-name",
+  "version": "0.1.0",
+  "description": "Parse a person's name into its component parts (title, first name, last name).",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weo-edu/parse-name"
+  },
+  "keywords": [
+    "parse",
+    "name",
+    "name",
+    "parser"
+  ],
+  "author": "ashaffer (http://github.com/ashaffer)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weo-edu/parse-name/issues"
+  },
+  "homepage": "https://github.com/weo-edu/parse-name",
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}
