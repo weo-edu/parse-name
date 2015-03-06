@@ -53,5 +53,11 @@ describe('parse-name', function() {
       assert.equal(compose({first: 'John'}), 'John');
       assert.equal(compose({first: 'John', title: 'Mr.'}, {respectful: true}), 'John');
     });
+
+    it('should support the full option', function() {
+      assert.equal(compose({title: 'Mr.', first: 'John', last: 'Smith'}, {full: true}), 'Mr. John Smith');
+      assert.equal(compose({first: 'John', last: 'Smith'}, {full: true}), 'John Smith');
+      assert.equal(compose({title: 'Mr.', first: 'John'}, {full: true}), 'Mr. John');
+    });
   });
 });

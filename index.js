@@ -29,6 +29,9 @@ exports.compose = function(components, opts) {
   var first = components.first;
   var last = components.last;
 
+  if(opts.full)
+    return [title, first, last].filter(Boolean).join(' ');
+
   if(opts.respectful && title && last)
     return title + ' ' + last;
 
