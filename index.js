@@ -1,6 +1,6 @@
 var defaultTitles = ['Mrs.', 'Ms.', 'Mr.', 'Dr.'];
 
-module.exports = function(name, titles) {
+exports.parse = function(name, titles) {
   titles = titles || defaultTitles;
 
   var parts = name.split(' ');
@@ -21,6 +21,13 @@ module.exports = function(name, titles) {
     components.last = parts.join(' ');
 
   return components;
+};
+
+exports.compose = function(components, opts) {
+  opts = opts || {};
+
+  var first = opts.respectful ? components.title : components.first;
+  return first + ' ' + components.last;
 };
 
 module.exports.titles = defaultTitles;

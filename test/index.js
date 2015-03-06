@@ -1,5 +1,6 @@
 var assert = require('assert');
-var parse = require('../');
+var parse = require('../').parse;
+var compose = require('../').compose;
 
 describe('parse-name', function() {
   it('should work', function() {
@@ -32,5 +33,11 @@ describe('parse-name', function() {
     assert.equal(name.title, 'Prof.');
     assert.equal(name.first, '');
     assert.equal(name.last, 'Smith');
+  });
+
+  it('should compose names correctly', function() {
+    var components = {first: 'John', last: 'Smith', title: 'Mr.'};
+    assert.equal(compose(components), 'John Smith');
+    assert.equal(compose(components, {respectful: true}), 'Mr. Smith');
   });
 });
