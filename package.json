@@ -24,5 +24,6 @@
   "homepage": "https://github.com/weo-edu/parse-name",
   "devDependencies": {
     "mocha": "^2.1.0"
-  }
+  },
+  "dependencies": {}
 }
