@@ -1,6 +1,6 @@
 {
   "name": "parse-name",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Parse a person's name into its component parts (title, first name, last name).",
   "main": "index.js",
   "scripts": {
