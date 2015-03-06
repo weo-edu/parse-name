@@ -25,9 +25,17 @@ exports.parse = function(name, titles) {
 
 exports.compose = function(components, opts) {
   opts = opts || {};
+  var title = components.title;
+  var first = components.first;
+  var last = components.last;
 
-  var first = opts.respectful ? (components.title || components.first) : components.first;
-  return first + ' ' + components.last;
+  if(opts.respectful && title && last)
+    return title + ' ' + last;
+
+  if(first && last)
+    return first + ' ' + last;
+
+  return first || last || '';
 };
 
 module.exports.titles = defaultTitles;
