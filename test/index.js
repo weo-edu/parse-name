@@ -35,6 +35,13 @@ describe('parse-name', function() {
       assert.equal(name.first, '');
       assert.equal(name.last, 'Smith');
     });
+
+    it('should not throw an error for null/undefined name', function() {
+      var name = parse(null);
+      assert(name.first === '');
+      assert(name.last === '');
+      assert(name.title === '');
+    });
   });
 
   describe('compose', function() {

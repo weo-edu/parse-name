@@ -3,8 +3,10 @@ var defaultTitles = ['Mrs.', 'Ms.', 'Mr.', 'Dr.'];
 exports.parse = function(name, titles) {
   titles = titles || defaultTitles;
 
-  var parts = name.split(' ');
   var components = {title: '', first: '', last: ''};
+  if(! name) return components;
+
+  var parts = name.split(' ');
 
   if(titles.indexOf(parts[0]) !== -1) {
     components.title = parts.shift();
